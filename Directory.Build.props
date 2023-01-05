@@ -1,0 +1,21 @@
+<Project>
+	<!-- https://github.com/dansiegel/Mobile.BuildTools/issues/282#issuecomment-887798684 -->
+	<Target Name="MobileBuildToolsHack"
+			BeforeTargets="Secrets"
+			DependsOnTargets="MobileBuildToolsInit">
+	</Target>
+
+	<PropertyGroup Condition="'$(MSBuildProjectExtension)' == '.csproj'">
+		<LangVersion>10.0</LangVersion>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)\Civica.CMF.ruleset</CodeAnalysisRuleSet>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include="$(MSBuildThisFileDirectory)\stylecop.json" InProject="false" />
+	</ItemGroup>
+</Project>
