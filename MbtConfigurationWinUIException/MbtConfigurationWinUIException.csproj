@@ -49,6 +49,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Raw\app.config" />
+	  <None Remove="Resources\Raw\app.e2e.config" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="Mobile.BuildTools" Version="2.0.245" />
 	  <PackageReference Include="Mobile.BuildTools.Configuration" Version="2.0.245" />
 	</ItemGroup>
